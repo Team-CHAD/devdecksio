@@ -1,0 +1,15 @@
+{
+  "name": "devdecks.io",
+  "version": "1.0.0",
+  "description": "devdecks landing page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cheng, Hoon, Andres, Dan",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.14.0",
+    "node-sass-middleware": "^0.10.0"
+  }
+}
