@@ -1,13 +1,27 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
-@import url(https://fonts.googleapis.com/css?family=PT+Sans);
+// @import url(https://fonts.googleapis.com/css?family=PT+Sans);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 
-$font-body: 'PT Sans', sans-serif;
+// OLD COLOR PALETTE
+// $primary-color: rgba(0, 98, 163, 1);
+// $gray5: #A3BAC3;
+// $tertiary-color: #01A7C2;
+// $background-color: #EAEBED;
+// $contrast-color: #F5A55B;
+// $contrast-color-pop: #F39237;
+// $contrast-color-text: #F7F7F8;
+
+$font-body: 'Roboto', sans-serif;
 $primary-color: rgba(0, 98, 163, 1);
-$secondary-color: #A3BAC3;
-$tertiary-color: #01A7C2;
-$background-color: #EAEBED;
-$contrast-color: #F5A55B;
-$contrast-color-pop: #F39237;
+$gray3: #8A9BA8;
+$gray5: #BFCCD6;
+$blue3: #137CBD;
+$blue5: #48AFF0;
+$background-color: #EDECEA;
+$red3: #DB3737;
+$green1: #0A6640;
+$green2: #0D8050;
+$green3: #0F9960;
 $contrast-color-text: #F7F7F8;
 
 $active-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
@@ -30,18 +44,36 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: $primary-color;
   }
+  a {
+    text-decoration: none;
+    color: $gray5;
+    @include transition-props();
+    &:hover {
+      color: $blue3;
+    }
+  }
+  h3 {
+    text-align: center;
+    color: $red3;
+  }
 }
 
 #nav-bar {
-  padding: 0 2em 1em 0;
+  // padding: 0 2em 1em 0;
   ul {
-    margin: 1em 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0;
     padding: 0;
     width: 100%;
+    height: 50px;
     list-style-type: none;
     text-align: right;
-    color: $secondary-color;
+    color: $gray5;
+    background-color: $gray3;
     .nav-bar-item {
+      // align-self: center;
       margin: 0 1em;
       display: inline;
     }
@@ -58,18 +90,19 @@ body {
     .download-button {
       display: inline;
       margin: 0 1em;
-      padding: 1em 1.5em;
-      border-radius: 10px;
+      padding: .5em 1em;
+      border-radius: 5px;
       font-weight: 600;
-      background-color: $contrast-color;
+      background-color: $green3;
       box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
       @include transition-props();
       &:hover {
-        color: $secondary-color;
-        background-color: $contrast-color-pop;
+        color: $gray5;
+        background-color: $green2;
       }
       &:active {
         box-shadow: $active-box-shadow;
+        background-color: $green1;
       }
       a {
         color: $contrast-color-text;
@@ -78,18 +111,6 @@ body {
   }
 }
 
-a {
-  text-decoration: none;
-  color: $secondary-color;
-  &:hover {
-    color: $tertiary-color;
-  }
-}
-
-h3 {
-  text-align: center;
-  color: $secondary-color;
-}
 
 #screenshot-container {
   text-align: center;
