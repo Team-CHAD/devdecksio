@@ -2,21 +2,27 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
 $font-body: 'Roboto', sans-serif;
+
+// color swatches
 $primary-color: rgba(0, 98, 163, 1);
 $dark-gray5: #394B59;
 $gray1: #5C7080;
 $gray2: #738694;
 $gray3: #8A9BA8;
 $gray5: #BFCCD6;
+$light-gray1: #CED9E0;
+$light-gray5: #F5F8FA;
 $blue3: #137CBD;
 $blue5: #48AFF0;
-$background-color: #EDECEA;
 $red3: #DB3737;
 $green1: #0A6640;
 $green2: #0D8050;
 $green3: #0F9960;
-$contrast-color-text: #F7F7F8;
 
+
+$background-color: #EDECEA;
+$contrast-color-text: $light-gray5;
+$box-radius: 5px;
 $box-shadow-active: 0 1px 2px rgba(0, 0, 0, 0.2);
 $box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 
@@ -34,32 +40,19 @@ $box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 
 body {
   margin: 0;
+  padding: 0;
   font-family: $font-body;
   background-color: $background-color;
-  h1 {
-    margin:0 auto;
-    z-index: 0;
-    text-align: center;
-    font-size: 5em;
-    font-family: 'Montserrat', sans-serif;
-    color: $primary-color;
-  }
-  h2 {
-    margin: 2em;
-    text-align: center;
-    color: $red3;
-  }
   a {
     text-decoration: none;
-    color: $gray5;
     @include transition-props();
   }
 }
 
-#nav-bar {
+header {
   margin-bottom: 1em;
   box-shadow: $box-shadow;
-  ul {
+  nav {
     display: flex;
     justify-content: flex-end;
     margin: 0;
@@ -67,20 +60,19 @@ body {
     width: 100%;
     height: 50px;
     list-style-type: none;
-    text-align: right;
-    color: $gray5;
     background-color: $gray3;
-    li {
+    a {
       display: inline-flex;
       padding: 0 1.5em;
       height: 50px;
+      color: $light-gray5;
       &:hover {
         background-color: $gray2;
       }
       &:active {
         background-color: $gray1;
       }
-      a {
+      li {
         align-self: center;
       }
     }
@@ -96,39 +88,50 @@ body {
   div {
     margin: 1em;
     img {
+      background-color: white;
       box-shadow: $box-shadow;
       @include img-props($img-max-height)
     }
   }
+  h2 {
+    margin: 0.5em;
+    text-align: center;
+    color: $red3;
+  }
 }
 
-#download-buttons {
-  ul {
-    list-style-type: none;
-    margin: 3.5em 0;
-    padding: 0;
-    width: 100%;
-    text-align: center;
-    .download-button {
-      display: inline;
-      margin: 0 1em;
-      padding: .5em 1em;
-      border-radius: 5px;
-      font-weight: 600;
-      background-color: $green3;
-      box-shadow: $box-shadow;
-      @include transition-props();
-      &:hover {
-        color: $gray5;
-        background-color: $green2;
-      }
-      &:active {
-        box-shadow: $box-shadow-active;
-        background-color: $green1;
-      }
-      a {
-        color: $contrast-color-text;
-      }
+#downloads-container {
+  margin: 2.5em 25% 3.5em 25%;
+  padding: 1em 0 0 0;
+  border-radius: $box-radius;
+  list-style-type: none;
+  text-align: center;
+  background-color: $light-gray1;
+  h4 {
+    margin: 1em 0 1.5em 0;
+    color: $gray3;
+  }
+  .download-button {
+    display: inline;
+    margin: 0 1em;
+    padding: .5em 1.5em;
+    font-weight: 600;
+    font-size: 1.25em;
+    border-radius: $box-radius;
+    color: $contrast-color-text;
+    background-color: $green3;
+    box-shadow: $box-shadow;
+    @include transition-props();
+    &:hover {
+      background-color: $green2;
+    }
+    &:active {
+      box-shadow: $box-shadow-active;
+      background-color: $green1;
+    }
+    svg {
+      fill: $contrast-color-text;
+      transform: translate(-3px, 3px);
     }
   }
 }
@@ -154,13 +157,15 @@ body {
     margin-left: 2em;
     max-width: 50%;
     color: $gray1;
+    line-height: 1.7em;
   }
   h3 {
+    font-size: 2em;
     color: $dark-gray5;
   }
 }
 
-#footer {
+footer {
   display: flex;
   justify-content: center;
   height: 100px;

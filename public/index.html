@@ -2,59 +2,76 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>devdecks</title>
+    <title>DevDecks</title>
     <link rel="stylesheet" href="main.css" type="text/css">
   </head>
   <body>
 
-    <div id="nav-bar">
-      <ul>
-        <li><a href="#">docs</a></li>
-        <li><a href="#">github</a></li>
-        <li><a href="#">contact</a></li>
-      </ul>
-    </div>
+    <header>
+      <nav>
+        <a href="#"><li>docs</li></a>
+        <a href="https://github.com/devdecks/devdecks"><li>github</li></a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeW91-eGByNGFs75P-zmMDj124KCmAHomCGu-Og2Zo2KGWYQg/viewform"><li>contact</li></a>
+      </nav>
+    </header>
 
-    <div id="title-container">
+    <section id="title-container">
       <div id="logo-container">
         <img src="logo.png" alt="devdecks">
       </div>
       <div id="screenshot-container">
         <img src="screenshot.png" alt="screenshot">
       </div>
-    </div>
+      <h2>An open-source and extensible, stand-alone presentation app for developers</h2>
+    </section>
 
-    <h2>An open-source and extensible, stand-alone presentation app for developers</h2>
+    <section id="downloads-container">
+      <h4>Currently in alpha. Built in Electron with React-Redux/TypeScript.</h4>
+      <a href="#"><div class="download-button">
+        <svg width="20px" height="20px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M10,0C4.48,0,0,4.48,0,10c0,5.52,4.48,10,10,10s10-4.48,10-10
+              C20,4.48,15.52,0,10,0z M14.71,11.71l-4,4C10.53,15.89,10.28,16,10,16s-0.53-0.11-0.71-0.29l-4-4C5.11,11.53,5,11.28,5,11
+              c0-0.55,0.45-1,1-1c0.28,0,0.53,0.11,0.71,0.29L9,12.59V5c0-0.55,0.45-1,1-1s1,0.45,1,1v7.59l2.29-2.29
+              C13.47,10.11,13.72,10,14,10c0.55,0,1,0.45,1,1C15,11.28,14.89,11.53,14.71,11.71z"/>
+        </svg>
+        Download for Mac
+      </div></a>
+    </section>
 
-    <div id="download-buttons">
-      <ul>
-        <li class="download-button"><a href="#">Download for Mac</a></li>
-      </ul>
-    </div>
-
-    <div class="feature">
+    <section class="feature">
       <div class="feature-glyph">
         <img src="feature1.png" alt="code highlighting feature">
       </div>
       <div class="feature-blurb">
         <h3>Code highlighting</h3>
-        <p>No more switching windows in the middle of your presentation. Seamlessly highlight code as you flow through your slides.</p>
+        <p>No more switching windows in the middle of your presentation. Seamlessly highlight code as you focus on communicating what your code does.</p>
       </div>
-    </div>
+    </section>
 
-    <div class="feature">
+    <section class="feature">
       <div class="feature-glyph">
         <img src="feature2.png" alt="plugins feature">
       </div>
       <div class="feature-blurb">
-        <h3>Make it your own</h3>
-        <p>Create your own plugins to add new functionality to your presentation. Access the component API and harness the power of NodeJS.</p>
+        <h3>Extensible</h3>
+        <p>Add new functionality by creating your own plugins. Access the component API and harness the power of NodeJS to bring your dream feature to life.</p>
       </div>
-    </div>
+    </section>
 
-    <div id="footer">
+    <section class="feature">
+      <div class="feature-glyph">
+        <img src="feature3.png" alt="code highlighting feature">
+      </div>
+      <div class="feature-blurb">
+        <h3>Upcoming features</h3>
+        <p>We're actively working on devdecks. Some of the features we envision in future releases include the ability to make API calls, integrate voice recognition and bluetooth device connectivity, collaborate remotely, and automatically sync files with cloud storage services.</p>
+      </div>
+    </section>
+
+    <footer>
       <span>Made with &#60;3 by Team CHAD</span>
-    </div>
+    </footer>
 
   </body>
 </html>
