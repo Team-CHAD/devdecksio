@@ -33,9 +33,9 @@ $box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
 @mixin img-props($height) {
-  margin: 1em;
   width: auto;
   max-height: $height;
+  max-width: 100%;
 }
 
 body {
@@ -83,9 +83,15 @@ header {
   $img-max-height: 300px;
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: column wrap;
   justify-content: center;
+
+  #images-container {
+    text-align: center;
+  }
+
   div {
+    display: inline-block;
     margin: 1em;
     img {
       background-color: white;
@@ -93,6 +99,7 @@ header {
       @include img-props($img-max-height)
     }
   }
+
   h2 {
     margin: 0.5em;
     text-align: center;
@@ -101,26 +108,29 @@ header {
 }
 
 #downloads-container {
-  margin: 2.5em 25% 3.5em 25%;
-  padding: 1em 0 0 0;
-  border-radius: $box-radius;
   list-style-type: none;
-  text-align: center;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 1em 0 0 0;
   background-color: $light-gray1;
+  border-radius: $box-radius;
+  text-align: center;
   h4 {
-    margin: 1em 0 1.5em 0;
+    margin: 1em 0 0;
     color: $gray3;
+    font-size: 1.5em;
   }
   .download-button {
-    display: inline;
-    margin: 0 1em;
-    padding: .5em 1.5em;
+    width: 200px;
+    color: $contrast-color-text;
     font-weight: 600;
     font-size: 1.25em;
+    margin: 0 auto;
+    padding: .5em 1.5em;
     border-radius: $box-radius;
-    color: $contrast-color-text;
     background-color: $green3;
     box-shadow: $box-shadow;
+    transform: translateY(20px);    
     @include transition-props();
     &:hover {
       background-color: $green2;
@@ -138,12 +148,18 @@ header {
 
 .feature {
   $max-height: 200px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
   padding: 1.5em;
   background-color: $gray5;
+
+  .feature-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+    max-width: 1920px;
+  }
+  
   .feature-glyph {
     align-self: center;
     img {
@@ -152,25 +168,41 @@ header {
       @include img-props($max-height)
     }
   }
+
   .feature-blurb {
     align-self: center;
     margin-left: 2em;
-    max-width: 50%;
+    max-width: 75%;
     color: $gray1;
     line-height: 1.7em;
+    @media screen and (max-width: 992px) {
+      margin-left: 0;
+    }
   }
+
   h3 {
     font-size: 2em;
     color: $dark-gray5;
+    @media screen and (max-width: 992px) {
+      text-align: center;
+    }
+  }
+
+  p {
+    font-size: 1.5em;
+    @media screen and (max-width: 992px) {
+      text-align: center;
+    }
   }
 }
 
 footer {
   display: flex;
   justify-content: center;
-  height: 100px;
-  color: $gray5;
   background-color: $background-color;
+  color: $gray5;
+  font-size: 1.5em;
+  height: 100px;
   span {
     align-self: center;
   }
